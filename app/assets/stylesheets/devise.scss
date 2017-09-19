@@ -1,0 +1,35 @@
+.login-container, .registration-container {
+  margin-top: 25px;
+}
+
+.login-content, .registration-content {
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid #eee;
+}
+
+.center-title {
+  display: flex;
+  justify-content: center;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+}
+
+.login-button, .register-button {
+  margin-bottom: 10px;
+  display: inline-block;
+
+}
+
+.or-splitter {
+  color: grey;
+  margin: 5px 10px 5px 10px;
+}
+
+.password-length {
+  font-style: italic;
+  margin-bottom: 25px;
+}

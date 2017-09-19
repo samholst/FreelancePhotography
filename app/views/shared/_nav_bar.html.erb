@@ -3,31 +3,31 @@
     <%= link_to "Code Search", root_path, class: "brand-logo red-text" %>
     <a href="#" data-activates="mobile-demo" class="button-collapse red-text"><i class="material-icons">menu</i></a>
       <ul class="hide-on-med-and-down right">
-          <li>
-             <div class="center row">
-                <div class="col s12">
-                  <div class="row" id="topbarsearch">
-                    <form action="<%= search_path %>" method="get">
-                      <div class="input-field col s6 s12 red-text">
-                        <i class="red-text material-icons prefix">search</i>
-                        <input type="text" placeholder="I'm looking for a programmer in..." id="autocomplete-input" class="autocomplete red-text" name="location" value="<%= @search_city_state %>" autofocus>
-                      </div>
-                    </form>
+        <li>
+           <div class="center row">
+              <div class="col s12">
+                <div class="row" id="topbarsearch">
+                  <form action="<%= search_path %>" method="get">
+                    <div class="input-field col s6 s12 red-text">
+                      <i class="red-text material-icons prefix">search</i>
+                      <input type="text" placeholder="I'm looking for a programmer in..." id="autocomplete-input" class="autocomplete red-text" name="location" value="<%= @search_city_state %>" autofocus>
                     </div>
+                  </form>
                   </div>
                 </div>
-            </li>
-          <li><%= link_to 'Home', root_path, class: "red-text" %></li>
-          <li><a href="" class="red-text">Sign Up</a></li>
-          <li><a href="" class="red-text">Login</a></li>
-          <li><a href="" class="red-text">My Account</a></li>
+              </div>
+          </li>
+          <li><%= link_to "Home", root_path, class: "red-text" %></li>
+          <li><%= link_to "Register", new_user_registration_path, class: "red-text" %></li>
+          <li><%= link_to "Login", new_user_session_path, class: "red-text" %></li>
+          <li><%= link_to "My Account", edit_user_registration_path, class: "red-text" %></li>
       </ul>
 
       <ul class="side-nav" id="mobile-demo">
-        <li><%= link_to 'Home', root_path, class: "red-text" %></li>
-        <li><a href="" class="red-text">Sign Up</a></li>
-        <li><a href="" class="red-text">Login</a></li>
-        <li><a href="" class="red-text">My Account</a></li>
+        <li><%= link_to "Home", root_path, class: "red-text" %></li>
+        <li><%= link_to "Register", new_user_registration_path, class: "red-text" %></li>
+        <li><%= link_to "Login", new_user_session_path, class: "red-text" %></li>
+        <li><%= link_to "My Account", edit_user_registration_path, class: "red-text" %></li>
       </ul>
   </div>
 </nav>
