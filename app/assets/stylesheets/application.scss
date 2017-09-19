@@ -12,5 +12,10 @@
  *
  *= require_tree .
  *= require material_icons
+ *= require jquery-ui
  *= require_self
  */
+
+body {
+  background-color: #e9ebee;
+}
