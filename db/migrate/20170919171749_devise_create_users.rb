@@ -39,10 +39,10 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.1]
       t.string :city,              default: "", null: false
       t.string :state,             default: "", null: false
       t.string :postal_code,       default: "", null: false
-      t.string :complete_address,
+      t.string :complete_address
       t.string :roles
     end
-    add_index :users, :complete_address,
+    add_index :users, :complete_address
     add_index :users, :email,                unique: true
     add_index :users, :reset_password_token, unique: true
     # add_index :users, :confirmation_token,   unique: true
