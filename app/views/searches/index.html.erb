@@ -10,51 +10,54 @@
 </div>
 
 <script>
-  var lat_lang = <%= Geocoder.coordinates(@search_city_state) %>;
+  var lat_lang_main = <%= Geocoder.coordinates(@search_city_state) %>;
+  var programmers = [
+                      <% @results.each do |user| %>
+                        <% lat = user.lat_lang.split(/,/)[0] %>
+                        <% lang = user.lat_lang.split(/,/)[1] %>
+                        {
+                          lat: <%= lat %>,
+                          lng: <%= lang %>,
+                        },
+                      <% end %>
+                    ];
+
+  var markers = [];
   var map;
+
   function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
       zoom: 13,
-      center: new google.maps.LatLng(lat_lang[0], lat_lang[1]),
-      mapTypeId: 'roadmap'
-    });
-
-    var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
-    var icons = {
-      parking: {
-        icon: iconBase + 'parking_lot_maps.png'
-      },
-      library: {
-        icon: iconBase + 'library_maps.png'
-      },
-      info: {
-        icon: iconBase + 'info-i_maps.png'
-      }
-    };
-
-    var features = [
-      <% @results.each do |user| %>
-        <% lat = user.lat_lang.split(/,/)[0] %>
-        <% lang = user.lat_lang.split(/,/)[1] %>
-        {
-          position: new google.maps.LatLng(<%= lat %>, <%= lang %>),
-          type: 'info'
-        },
-      <% end %>
-    ];
-
-    // Create markers.
-    features.forEach(function(feature) {
-      var marker = new google.maps.Marker({
-        position: feature.position,
-        icon: icons[feature.type].icon,
-        map: map
-      });
+      center: {lat: lat_lang_main[0], lng: lat_lang_main[1] }
     });
   }
+
+  function drop() {
+    clearMarkers();
+    for (var i = 0; i < programmers.length; i++) {
+      addMarkerWithTimeout(programmers[i], i * 200);
+    }
+  }
+
+  function addMarkerWithTimeout(position, timeout) {
+    window.setTimeout(function() {
+      markers.push(new google.maps.Marker({
+        position: position,
+        map: map,
+        icon: '/assets/programmercopy.png',
+        animation: google.maps.Animation.DROP
+      }));
+    }, timeout);
+  }
+
+  function clearMarkers() {
+    for (var i = 0; i < markers.length; i++) {
+      markers[i].setMap(null);
+    }
+    markers = [];
+  }
+  setTimeout(drop, 1000);
 </script>
 
-
-<script async defer
-src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBMqje86oyLLRGl_88A_f5L_e32Y7RD0Q&callback=initMap">
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBMqje86oyLLRGl_88A_f5L_e32Y7RD0Q&callback=initMap">
 </script>

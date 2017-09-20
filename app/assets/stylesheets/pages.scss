@@ -15,6 +15,9 @@
   height: 85vh;
   margin: 15px !important;
   border-radius: 5px;
+  // overflow: auto;
+  overflow-y:auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .map-houser {
@@ -33,6 +36,7 @@
   margin-top: 10px;
   display: flex;
   justify-content: center;
+  margin-bottom: 0px;
 }
 
 .search-bar {
@@ -57,7 +61,7 @@
 }
 
 .front-landing-page {
-  padding: 350px 100px;
+  padding: 250px 100px 250px 200px;
   color: white;
   font-size: 30px;
   // text-align: center;
