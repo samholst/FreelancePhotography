@@ -23,7 +23,7 @@ User.create!(
 puts "Second user created"
 
 orem_addresses = ["1140 West 800 North", "15 State St", "1265 S Sandhill Rd", "1611 State St", "1170 West 800 North", "1170 800 N", "106 State St", "315 N 900 W"]
-7.times do |n|
+8.times do |n|
   User.create!(
               email: "user_#{n}_orem@test.com",
               first_name: "John",
@@ -35,7 +35,7 @@ orem_addresses = ["1140 West 800 North", "15 State St", "1265 S Sandhill Rd", "1
               password: "asdfasdf"
             )
 end
-puts "7 Orem users created"
+puts "8 Orem users created"
 
 provo_addresses = ["760 E 700 N", "627 N 100 W"]
 2.times do |n|
