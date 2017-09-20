@@ -1,6 +1,6 @@
 class SearchesController < ApplicationController
   def index
-    @results = User.where("complete_address LIKE '%#{params[:location]}%'")
+    @results = User.where("LOWER(complete_address) LIKE '%#{params[:location].downcase}%'")
     @search_city_state = params[:location]
   end
 
