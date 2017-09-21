@@ -12,19 +12,19 @@
 
 .programmer-list {
   background-color: white;
-  height: 85vh;
-  margin: 15px !important;
-  border-radius: 5px;
+  // height: 85vh;
+  margin-top: 2px !important;
+  // border-radius: 5px;
   // overflow: auto;
   overflow-y:auto;
   -webkit-overflow-scrolling: touch;
 }
 
 .map-houser {
-  background-color: black;
-  margin: 15px !important;
+  // background-color: black;
+  // margin: 15px !important;
   padding: 0px !important;
-  border-radius: 5px;
+  // border-radius: 5px;
   overflow: hidden;
 }
 
@@ -33,7 +33,7 @@
 }
 
 .search-row-results {
-  margin-top: 10px;
+  margin-top: 0px;
   display: flex;
   justify-content: center;
   margin-bottom: 0px;

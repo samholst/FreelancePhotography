@@ -1,9 +1,12 @@
 .display-progammer-info {
-  margin: 0px 0px 5px 0px;
+  margin: 5px 0px 5px 0px;
 }
 
 .programmer-block {
-  margin-top: 20px;
+  // background-color: white;
+  margin-top: 10px;
+  border-bottom: 1px solid #e5e5e5;
+  // border-radius: 5px;
 }
 
 .gravatar-image {
@@ -11,5 +14,21 @@
 }
 
 .programmer-pic {
+  padding-top: 5px !important;
+}
 
+.how-many-results {
+  font-size: 20px;
+}
+
+.programmer-story {
+  margin-top: 5px;
+}
+
+.search-programmer {
+  margin-bottom: 0px !important;
+}
+
+#map {
+  margin-top: 2px;
 }
