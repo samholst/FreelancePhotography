@@ -10,6 +10,6 @@ class SearchesController < ApplicationController
     end
 
     def fetch_results param
-      User.where("LOWER(complete_address) LIKE '%#{param.downcase}%'")
+      User.where("LOWER(complete_address) LIKE '%#{param.downcase}%'").order("created_at DESC")
     end
 end
