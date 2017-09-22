@@ -37,6 +37,7 @@
   function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
       zoom: 12,
+      fullscreenControl: false,
       center: {lat: lat_lang_main[0], lng: lat_lang_main[1] }
     });
   }
@@ -53,6 +54,7 @@
       markers.push(new google.maps.Marker({
         position: position,
         map: map,
+        // icon: '/assets/programmercopy.png',
         icon: 'https://s3-us-west-2.amazonaws.com/www.samwholst.com/programmercopy.png',
         animation: google.maps.Animation.DROP
       }));
