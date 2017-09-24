@@ -13,13 +13,12 @@
 </div>
 
 <script>
+  $("#map").height($(window).height() - $(".nav-wrapper").height() - 2);
+  $(".programmer-list").height($(window).height() - $(".nav-wrapper").height() - 2);
   // $("#map").css("position", "fixed");
   // console.log("Map Container Height: " + $("#map").height());
   // console.log("Header Height: " + $(".nav-wrapper").height());
   // console.log("Window Height: " + $(window).height());
-  $("#map").height($(window).height() - $(".nav-wrapper").height() - 2);
-  $(".programmer-list").height($(window).height() - $(".nav-wrapper").height() - 2);
-
   var lat_lang_main = <%= Geocoder.coordinates(@search_city_state) %>;
   var programmers = [
                       <% @results.each do |user| %>
