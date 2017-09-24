@@ -9,6 +9,8 @@
 
     .col.s6.map-houser
       #map
+ruby:
+  @lat_langs = @results.pluck(:lat_lang)
 
 javascript:
   $("#map").height($(window).height() - $(".nav-wrapper").height() - 2);

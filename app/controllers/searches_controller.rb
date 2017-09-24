@@ -1,7 +1,6 @@
 class SearchesController < ApplicationController
   def index
     @results = fetch_results params[:location]
-    @lat_langs = @results.pluck(:lat_lang)
     @search_city_state = params[:location]
   end
 
