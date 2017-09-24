@@ -10,10 +10,6 @@
       #map
 
 javascript:
-  // $("#map").css("position", "fixed");
-  // console.log("Map Container Height: " + $("#map").height());
-  // console.log("Header Height: " + $(".nav-wrapper").height());
-  // console.log("Window Height: " + $(window).height());
   $("#map").height($(window).height() - $(".nav-wrapper").height() - 2);
   $(".programmer-list").height($(window).height() - $(".nav-wrapper").height() - 2);
 
@@ -29,13 +25,10 @@ javascript:
     list.forEach(function(item) {
       item_location = {lat: parseFloat(item.split(",")[0]), lng: parseFloat(item.split(",")[1])}
       array_list.push(item_location);
-      //console.log(item_location);
     });
 
     return array_list
   }
-
-  //console.log(programmers);
 
   function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
