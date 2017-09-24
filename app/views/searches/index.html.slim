@@ -9,9 +9,6 @@
     .col.s6.map-houser
       #map
 
-ruby:
-  coordinates = @results.to_json.html_safe
-
 javascript:
   // $("#map").css("position", "fixed");
   // console.log("Map Container Height: " + $("#map").height());
@@ -21,11 +18,24 @@ javascript:
   $(".programmer-list").height($(window).height() - $(".nav-wrapper").height() - 2);
 
   var lat_lang_main = #{Geocoder.coordinates(@search_city_state)};
-
-  var programmers = #{coordinates};
-
+  var programmers = organize();
   var markers = [];
   var map;
+
+  function organize() {
+    array_list = [];
+    list = #{@lat_langs.to_json.html_safe};
+
+    list.forEach(function(item) {
+      item_location = {lat: parseFloat(item.split(",")[0]), lng: parseFloat(item.split(",")[1])}
+      array_list.push(item_location);
+      //console.log(item_location);
+    });
+
+    return array_list
+  }
+
+  //console.log(programmers);
 
   function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
@@ -62,5 +72,4 @@ javascript:
   }
   setTimeout(drop, 1000);
 
-javascript:
-  async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBMqje86oyLLRGl_88A_f5L_e32Y7RD0Q&callback=initMap"
+| <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBMqje86oyLLRGl_88A_f5L_e32Y7RD0Q&callback=initMap"></script>
