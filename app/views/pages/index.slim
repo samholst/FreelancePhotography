@@ -1,0 +1,21 @@
+.container
+  = video_tag  'Work-Walk/Work-Walk.mp4',
+                id: 'background',
+                autoplay: true,
+                loop: true,
+                muted: true,
+                poster: 'Work-Walk/Work-Walk.jpg'
+
+  .front-landing-page
+    .row.index-search-form
+      .col.s12
+        form action="search" method="get" class="search-form"
+          i class="red-text material-icons prefix" search
+          | I am looking for programmers in
+          .input-field.inline
+            input (type="text" name="location" value="#{@search_city_state}" placeholder="Las Vegas, NV" autofocus required)
+
+javascript:
+  $("nav").css({"background-color": "transparent", "box-shadow": "none"});
+  $("nav").removeClass("white");
+  $("#topbarsearch").hide();

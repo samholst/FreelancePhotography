@@ -1,0 +1,10 @@
+.col.s12.programmer-block
+  .col.s2.programmer-pic
+    = gravatar_helper result
+
+  .col.s10.programmer-story
+    p class="display-progammer-info"
+      => result.first_name
+      = result.last_name
+    p class="display-progammer-info"
+      = result.complete_address
