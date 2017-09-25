@@ -1,12 +1,17 @@
 class SearchesController < ApplicationController
   def index
-    @results = fetch_results params[:location]
-    @search_city_state = params[:location]
+    if params[:location] != ""
+      @results = fetch_results fetch_params
+      @search_city_state = fetch_params
+    else
+      @results = []
+      @search_city_state = "United States"
+    end
   end
 
   private
     def fetch_params
-      params.permit(:location)
+      params[:location]
     end
 
     def fetch_results param

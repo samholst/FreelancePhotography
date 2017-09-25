@@ -1,0 +1,8 @@
+.container
+  .row
+    .col.s12.center
+      h1 #{@user.first_name} #{@user.last_name}
+      h5 = @user.complete_address
+      p = gravatar_helper_large @user, 200
+  .row
+    .col.s12.center
