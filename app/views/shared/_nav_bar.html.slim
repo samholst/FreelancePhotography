@@ -5,7 +5,7 @@ nav class="white"
       = link_to "Dev Hunt", root_path, class: "red-text"
 
     a href="#" data-activates="mobile-demo" class="button-collapse red-text"
-      i class="material-icons"menu
+      i class="material-icons" menu
     ul class="hide-on-med-and-down right"
       li
         .center.row
@@ -32,3 +32,8 @@ nav class="white"
       -  if user_signed_in?
         li = link_to "Logout", destroy_user_session_path, class: "red-text", method: :delete
         li = link_to "My Account", edit_user_registration_path, class: "red-text"
+      li
+        form action="#{search_path}" method="get"
+          .input-field.col.s12.red-text
+            i class="red-text material-icons prefix" search
+            input (type="text" placeholder="I'm looking for a programmer in..." id="autocomplete-input" class="autocomplete red-text" name="location" value="#{@search_city_state}" required)

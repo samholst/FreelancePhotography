@@ -61,7 +61,9 @@
 }
 
 .front-landing-page {
-  padding: 250px 100px 250px 200px;
+  display: flex;
+  justify-content: center;
+  // padding: 250px 0px;
   color: white;
   font-size: 30px;
   // text-align: center;
