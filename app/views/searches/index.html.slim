@@ -1,13 +1,13 @@
 .container-fluid
   .row.search-row-results
-    .col.s6.programmer-list
+    .col.s12.m6.programmer-list
       .col.s12.center.how-many-results
         => @results.count
         | programmers were found in #{@search_city_state}
 
       = render partial: 'result', collection: @results
 
-    .col.s6.map-houser
+    .col.s12.m6.map-houser.hide-on-small-only
       #map
 ruby:
   @lat_langs = @results.pluck(:lat_lang)
