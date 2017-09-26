@@ -14,7 +14,7 @@ nav class="white"
               form action="#{search_path}" method="get"
                 .input-field.col.s6.s12.red-text
                   i class="red-text material-icons prefix" search
-                  input (type="text" placeholder="I'm looking for a programmer in..." id="autocomplete-input" class="autocomplete red-text search-programmer" name="location" value="#{@search_city_state}" required)
+                  input (type="text" placeholder="I'm looking for a programmer in..." id="address" class="autocomplete red-text search-programmer" name="location" value="#{@search_city_state}" required)
 
         li = link_to "Home", root_path, class: "red-text"
         - unless user_signed_in?

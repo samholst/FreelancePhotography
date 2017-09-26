@@ -10,6 +10,5 @@ html
 
   body
     = render 'shared/nav_bar'
-    / <p class="notice"><%= notice %></p>
-    / <p class="alert"><%= alert %></p>
     == yield
+    = render 'shared/home_maps_autocomplete'

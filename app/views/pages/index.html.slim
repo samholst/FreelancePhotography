@@ -13,10 +13,20 @@
           i class="red-text material-icons prefix" search
           | I am looking for programmers in
           .input-field.inline
-            input (type="text" name="location" value="#{@search_city_state}" placeholder="Las Vegas, NV" autofocus required)
+            input (type="text" name="location" id="address2" value="#{@search_city_state}" placeholder="Las Vegas, NV" autofocus required)
 
 javascript:
   $("nav").css({"background-color": "transparent", "box-shadow": "none"});
   $("nav").removeClass("white");
   $("#topbarsearch").hide();
   $(".front-landing-page").css({"margin-top": ($(window).height() * .3) })
+
+  $(function(){
+   $(window).load(function(){
+     var input = document.getElementById('address2');
+     var options = {
+         componentRestrictions: {country: 'us'}
+     };
+     var autocomplete = new google.maps.places.Autocomplete(input, options);
+   });
+  });
